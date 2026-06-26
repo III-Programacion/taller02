@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Editorial</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-warning">
+
+            <h3 class="mb-0">
+                Formulario Editorial
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <form th:action="@{/editoriales/guardar}"
+                  th:object="${editorial}"
+                  method="post">
+
+                <input type="hidden" th:field="*{id}">
+
+                <!-- NOMBRE -->
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Nombre
+                    </label>
+
+                    <input type="text"
+                           class="form-control"
+                           th:field="*{nombre}">
+
+                    <div class="text-danger"
+                         th:errors="*{nombre}">
+                    </div>
+
+                </div>
+
+                <!-- CIUDAD (CORREGIDO) -->
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Ciudad
+                    </label>
+
+                    <input type="text"
+                           class="form-control"
+                           th:field="*{ciudad}">
+
+                    <div class="text-danger"
+                         th:errors="*{ciudad}">
+                    </div>
+
+                </div>
+
+                <!-- BOTONES -->
+                <button class="btn btn-success">
+                    Guardar
+                </button>
+
+                <a th:href="@{/editoriales}"
+                   class="btn btn-secondary">
+                    Cancelar
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

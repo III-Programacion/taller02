@@ -1,0 +1,13 @@
+package com.fernando6489.taller02;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class Taller02ApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

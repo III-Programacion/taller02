@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Formulario Detalle Préstamo</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-info text-white">
+
+            <h3 class="mb-0">Formulario Detalle Préstamo</h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <form th:action="@{/detalleprestamos/guardar}"
+                  th:object="${detalle}"
+                  method="post">
+
+                <input type="hidden" th:field="*{id}">
+
+                <!-- Préstamo -->
+                <div class="mb-3">
+
+                    <label class="form-label">Préstamo</label>
+
+                    <select class="form-select"
+                            th:field="*{prestamo}">
+
+                        <option value="">Seleccione...</option>
+
+                        <option th:each="p : ${prestamos}"
+                                th:value="${p.id}"
+                                th:text="${p.id}">
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- Libro -->
+                <div class="mb-3">
+
+                    <label class="form-label">Libro</label>
+
+                    <select class="form-select"
+                            th:field="*{libro}">
+
+                        <option value="">Seleccione...</option>
+
+                        <option th:each="l : ${libros}"
+                                th:value="${l.id}"
+                                th:text="${l.titulo}">
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- Cantidad -->
+                <div class="mb-3">
+
+                    <label class="form-label">Cantidad</label>
+
+                    <input type="number"
+                           class="form-control"
+                           th:field="*{cantidad}">
+
+                </div>
+
+                <!-- Botones -->
+                <div class="mt-4">
+
+                    <button type="submit"
+                            class="btn btn-success">
+                        Guardar
+                    </button>
+
+                    <a th:href="@{/detalleprestamos}"
+                       class="btn btn-secondary">
+                        Cancelar
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

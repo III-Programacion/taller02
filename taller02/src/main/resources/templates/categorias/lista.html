@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Categorías</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+    <h2 class="mb-4">Gestión de Categorías</h2>
+
+    <div class="mb-3">
+
+        <a th:href="@{/}" class="btn btn-secondary">
+            Inicio
+        </a>
+
+        <a th:href="@{/categorias/nuevo}" class="btn btn-primary">
+            Nueva Categoría
+        </a>
+
+    </div>
+
+    <div th:if="${success}" class="alert alert-success">
+        <span th:text="${success}"></span>
+    </div>
+
+    <div th:if="${error}" class="alert alert-danger">
+        <span th:text="${error}"></span>
+    </div>
+
+    <table class="table table-striped table-hover table-bordered">
+
+        <thead class="table-dark">
+
+        <tr>
+
+            <th>ID</th>
+
+            <th>Nombre</th>
+
+            <th width="180">Acciones</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr th:each="categoria : ${categorias}">
+
+            <td th:text="${categoria.id}"></td>
+
+            <td th:text="${categoria.nombre}"></td>
+
+            <td>
+
+                <a th:href="@{/categorias/editar/{id}(id=${categoria.id})}"
+                   class="btn btn-warning btn-sm">
+
+                    Editar
+
+                </a>
+
+                <a th:href="@{/categorias/eliminar/{id}(id=${categoria.id})}"
+                   class="btn btn-danger btn-sm"
+                   onclick="return confirm('¿Eliminar esta categoría?')">
+
+                    Eliminar
+
+                </a>
+
+            </td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+
+</html>
