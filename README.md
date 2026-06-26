@@ -19,7 +19,7 @@ Incluye relaciones entre entidades y persistencia de datos.
 
 ## 🚀 Tecnologías
 
-- Java 17+
+- Java 21
 - Spring Boot
 - Spring Data JPA
 - Hibernate
