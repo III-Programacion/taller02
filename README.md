@@ -57,9 +57,15 @@ El proyecto sigue el patrón **MVC**:
 ### Base de datos PostgreSQL
 
 ```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/biblioteca
+spring.application.name=taller02
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/taller02
 spring.datasource.username=postgres
-spring.datasource.password=admin
+spring.datasource.password=Vega6489
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
 
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
