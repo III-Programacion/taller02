@@ -1,6 +1,6 @@
 # 📚 Sistema de Gestión de Biblioteca
 
-## 📌 Descripción
+## Descripción
 
 Proyecto desarrollado con **Spring Boot, JPA, Thymeleaf y PostgreSQL**, que permite la gestión completa de una biblioteca mediante operaciones CRUD.
 
@@ -17,7 +17,7 @@ Incluye relaciones entre entidades y persistencia de datos.
 
 ---
 
-## 🚀 Tecnologías
+## Tecnologías
 
 - Java 21
 - Spring Boot
@@ -30,7 +30,7 @@ Incluye relaciones entre entidades y persistencia de datos.
 
 ---
 
-## 🧩 Arquitectura
+## Arquitectura
 
 El proyecto sigue el patrón **MVC**:
 
@@ -42,7 +42,7 @@ El proyecto sigue el patrón **MVC**:
 
 ---
 
-## 🔗 Relaciones
+## Relaciones
 
 - Autor → Libro (1:N)
 - Categoría → Libro (1:N)
@@ -52,7 +52,7 @@ El proyecto sigue el patrón **MVC**:
 
 ---
 
-## ⚙️ Configuración
+## Configuración
 
 ### Base de datos PostgreSQL
 
